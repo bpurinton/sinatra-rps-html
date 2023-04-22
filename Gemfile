@@ -23,6 +23,7 @@ end
 
 group :test do
   gem 'capybara'
+  gem 'color_namer'
   gem 'rspec'
   gem 'rspec-html-matchers'
   gem 'webmock'

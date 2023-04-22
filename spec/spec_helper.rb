@@ -3,6 +3,7 @@ require 'capybara/dsl'
 require "rspec-html-matchers"
 require "#{File.expand_path('../support/json_output_formatter', __FILE__)}"
 require "#{File.expand_path('../support/hint_formatter', __FILE__)}"
+require "#{File.expand_path('../support/firstdraft_matchers', __FILE__)}"
 
 # Seemingly unneccesary:
 # require 'rspec'
