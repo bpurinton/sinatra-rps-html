@@ -23,9 +23,10 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'color_namer'
+  gem "draft_matchers", github: "jelaniwoods/draft_matchers", branch: "main"
   gem 'rspec'
   gem 'rspec-html-matchers'
   gem 'webmock'
+  gem 'webdrivers'
   gem 'i18n'
 end
