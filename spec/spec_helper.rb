@@ -1,9 +1,11 @@
 require './app'
 require 'capybara/dsl'
+require "draft_matchers"
 require "rspec-html-matchers"
+require "capybara/rspec"
 require "#{File.expand_path('../support/json_output_formatter', __FILE__)}"
 require "#{File.expand_path('../support/hint_formatter', __FILE__)}"
-require "#{File.expand_path('../support/firstdraft_matchers', __FILE__)}"
+require "#{File.expand_path('../support/headless_chrome', __FILE__)}"
 
 # Seemingly unneccesary:
 # require 'rspec'
