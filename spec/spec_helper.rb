@@ -1,4 +1,5 @@
 require './app'
+require './environment'
 require 'capybara/dsl'
 require "draft_matchers"
 require "rspec-html-matchers"
@@ -7,23 +8,13 @@ require "#{File.expand_path('../support/json_output_formatter', __FILE__)}"
 require "#{File.expand_path('../support/hint_formatter', __FILE__)}"
 require "#{File.expand_path('../support/headless_chrome', __FILE__)}"
 
-# Seemingly unneccesary:
-# require 'rspec'
-# require 'rack/test'
-# require 'capybara'
-# require "capybara/rspec"
-
 # setup for hints
 require 'i18n'
 I18n.load_path += Dir[File.expand_path("../support", __FILE__) + "/*.yml"]
 I18n.default_locale = :en # (note that `en` is already the default!)
 
+# set environment to test
 set :environment, :test
-
-# Only for Rails?
-# require File.expand_path('../config/environment', __dir__)
-# Prevent database truncation if the environment is production
-# abort("The Rails environment is running in production mode!") if Rails.env.production?
 
 # setup for capybara testing
 def app
@@ -48,7 +39,6 @@ Capybara.app = Sinatra::Application
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.include Capybara::DSL
-  # config.include Rack::Test::Methods
   config.include RSpecHtmlMatchers
   config.example_status_persistence_file_path = "examples.txt"
 
